@@ -1,12 +1,10 @@
 import { Component } from "react";
-import { connect } from "react-redux"
+import { connect } from "react-redux";
 
 class Question extends Component {
   render() {
-    return (
-      <p>qid: {this.props.qid}</p>
-    )
+    return <p>qid: {this.props.qid}</p>;
   }
 }
 
-export default connect()(Question)
+export default connect()(Question);

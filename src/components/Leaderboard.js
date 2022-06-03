@@ -3,9 +3,9 @@ import { connect } from "react-redux";
 
 class Leaderboard extends Component {
   render() {
-    return(
+    return (
       <div>
-        <h3 className='Title'>Leaderboard</h3>
+        <h3 className="Title">Leaderboard</h3>
         <ol>
           {this.props.userIds.map((uid) => (
             <li key={uid}>
@@ -14,16 +14,17 @@ class Leaderboard extends Component {
           ))}
         </ol>
       </div>
-    )
+    );
   }
 }
 
 function mapStateToProps({ users }) {
-  let userScore = id => Object.keys(users[id].answers).length + users[id].questions.length
+  let userScore = (id) =>
+    Object.keys(users[id].answers).length + users[id].questions.length;
 
-  return { 
-    userIds: Object.keys(users).sort((a,b,) => userScore(b) - userScore(a)) 
-  }
+  return {
+    userIds: Object.keys(users).sort((a, b) => userScore(b) - userScore(a)),
+  };
 }
 
-export default connect(mapStateToProps)(Leaderboard)
+export default connect(mapStateToProps)(Leaderboard);

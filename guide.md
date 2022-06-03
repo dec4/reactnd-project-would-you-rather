@@ -1,22 +1,28 @@
 # Template for Building React/ Redux Projects
+
 [Courtesy of Udacity React Nanodegree - React & Redux course]
 
 ## Planning Stage 📐
 
 ### Step 1 - Draw All of the Views of the App
+
 We need to determine the look and functionality of each view in your app. One of the best approaches is to draw each view of the app on paper so that you'll have a good idea of what information and data you're planning to have on each page.
 
 Instead of paper and pencil, you can be a bit more digital and use [software for creating mockups](https://codingsans.com/blog/mockup-tools). If you were given project specifications, check your mock against them to make sure that you have all of the required features.
 
 ### Step 2 - Break Each View Into a Hierarchy of Components
+
 For this step,
 
 draw boxes around every component; and
 arrange the components into a hierarchy
+
 ### Step 3 - Determine What Events Happen in the App
+
 We need to take a look at what is happening in each component. Let's determine what actions the app or the user is performing on the data. Is the data being set, modified, or deleted?...then we'll need an action to keep track of that event!
 
 ### Step 4 - Determine What Data Lives in the Store
+
 Remember that the main problems that Redux (and the react-redux bindings!) was meant to solve were:
 
 Propagation of props through the entire component tree.

@@ -1,15 +1,15 @@
 import { Component } from "react";
-import { connect } from "react-redux"
+import { connect } from "react-redux";
 
 class UserStats extends Component {
   render() {
-    const { authedUser, user } = this.props.user
-  
+    const { authedUser, user } = this.props.user;
+
     return (
       // TODO: highlight current user
-      
+
       <p>user: {this.props.user}</p>
-    )
+    );
   }
 }
 
@@ -21,14 +21,14 @@ function mapStateToProps({ users, authedUser }, { uid }) {
     authedUser,
     user: user
       ? {
-        id,
-        name,
-        avatarUrl,
-        nAnswered: Object.keys(answers).length,
-        nAsked: questions.length,
-      }
+          id,
+          name,
+          avatarUrl,
+          nAnswered: Object.keys(answers).length,
+          nAsked: questions.length,
+        }
       : null,
-  }
+  };
 }
 
-export default connect(mapStateToProps)(UserStats)
+export default connect(mapStateToProps)(UserStats);

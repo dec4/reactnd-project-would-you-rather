@@ -1,16 +1,18 @@
 import { receiveQuestions } from "./questions"
 import { setAuthedUser } from "./authedUser"
-import { _getQuestions } from "../_DATA"
+import { _getQuestions, _getUsers } from "../utils/_DATA"
 import { showLoading, hideLoading } from "react-redux-loading";
+import { receiveUsers } from "./users";
 
 const AUTHED_ID = 'tylermcginnis'
 
 export function handleInitialData () {
   return (dispatch) => {
     dispatch(showLoading())
-    return _getQuestions()
-      .then((questions) => {
-        dispatch(receiveQuestions(questions))
+    return Promise.all([_getQuestions(), _getUsers()])
+      .then((values) => {
+        dispatch(receiveQuestions(values[0]))
+        dispatch(receiveUsers(values[1]))
         dispatch(setAuthedUser(AUTHED_ID))
         dispatch(hideLoading())
       })

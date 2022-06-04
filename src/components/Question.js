@@ -57,7 +57,7 @@ class Question extends Component {
         )}
 
         {!Boolean(answeredByUser) && (
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <input
               type="radio"
               id={question.id + "-option1"}
@@ -84,7 +84,6 @@ class Question extends Component {
               className="btn"
               type="submit"
               disabled={this.state.selectedAnswer === ""}
-              onClick={this.handleSubmit}
             >
               Submit
             </button>

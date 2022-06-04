@@ -1,9 +1,33 @@
 import { Component } from "react";
 import { connect } from "react-redux";
+import { handleAnswerQuestion } from "../actions/shared";
 
 class Question extends Component {
-  handleClick = (e) => {
-    console.log(e.target.name, "clicked!");
+  state = {
+    selectedAnswer: "",
+  };
+
+  handleChange = (e) => {
+    const value = e.target.value;
+    const { question } = this.props;
+    const selectedAnswer =
+      value === question.optionOne.text ? "optionOne" : "optionTwo";
+
+    this.setState({
+      selectedAnswer,
+    });
+  };
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+
+    const { selectedAnswer } = this.state;
+    const { question, dispatch } = this.props;
+    dispatch(handleAnswerQuestion(question.id, selectedAnswer));
+
+    this.setState({
+      selectedAnswer,
+    });
   };
 
   render() {
@@ -15,7 +39,7 @@ class Question extends Component {
             <span
               style={{
                 textDecoration:
-                  userAnswer === "optionOne" ? "line-through" : "none",
+                  userAnswer === "optionOne" ? "none" : "line-through",
               }}
             >
               {question.optionOne.text}
@@ -24,7 +48,7 @@ class Question extends Component {
             <span
               style={{
                 textDecoration:
-                  userAnswer === "optionTwo" ? "line-through" : "none",
+                  userAnswer === "optionTwo" ? "none" : "line-through",
               }}
             >
               {question.optionTwo.text}
@@ -39,6 +63,7 @@ class Question extends Component {
               id={question.id + "-option1"}
               name="answer"
               value={question.optionOne.text}
+              onChange={this.handleChange}
             />
             <label htmlFor={question.id + "-option1"}>
               {question.optionOne.text}
@@ -49,12 +74,20 @@ class Question extends Component {
               id={question.id + "-option2"}
               name="answer"
               value={question.optionTwo.text}
+              onChange={this.handleChange}
             />
             <label htmlFor={question.id + "-option2"}>
               {question.optionTwo.text}
             </label>
             <br></br>
-            {/* TODO: add submit button to confirm user selection? */}
+            <button
+              className="btn"
+              type="submit"
+              disabled={this.state.selectedAnswer === ""}
+              onClick={this.handleSubmit}
+            >
+              Submit
+            </button>
           </form>
         )}
       </div>
@@ -69,7 +102,7 @@ function mapStateToProps({ questions, users, authedUser }, { qid }) {
   return {
     question,
     answeredByUser,
-    userAnswer: answeredByUser ? user.answers[question.id] : null,
+    userAnswer: answeredByUser ? user.answers[question.id] : "",
   };
 }
 

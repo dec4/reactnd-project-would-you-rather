@@ -15,8 +15,17 @@ export default function questions(state = {}, action) {
         [question.id]: question,
       };
     case ANSWER_QUESTION:
-      // TODO
-      return state;
+      const { authedUser, qid, answer } = action;
+      return {
+        ...state,
+        [qid]: {
+          ...state[qid],
+          [answer]: {
+            ...state[qid][answer],
+            votes: state[qid][answer]["votes"].concat(authedUser),
+          },
+        },
+      };
     default:
       return state;
   }

@@ -1,4 +1,6 @@
 import { Component } from "react";
+import { connect } from "react-redux";
+import { handleAddNewQuestion } from "../actions/shared";
 
 class NewQuestion extends Component {
   state = {
@@ -16,7 +18,16 @@ class NewQuestion extends Component {
   };
 
   handleSubmit = (e) => {
-    // TODO
+    e.preventDefault();
+
+    const { option1, option2 } = this.state;
+    const { dispatch } = this.props;
+    dispatch(handleAddNewQuestion(option1, option2));
+
+    this.setState(() => ({
+      option1: "",
+      option2: "",
+    }));
   };
 
   render() {
@@ -55,4 +66,4 @@ class NewQuestion extends Component {
   }
 }
 
-export default NewQuestion;
+export default connect()(NewQuestion);

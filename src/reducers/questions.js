@@ -1,8 +1,5 @@
-import {
-  RECEIVE_QUESTIONS,
-  NEW_QUESTION,
-  ANSWER_QUESTION,
-} from "../actions/questions";
+import { RECEIVE_QUESTIONS } from "../actions/questions";
+import { ANSWER_QUESTION, NEW_QUESTION } from "../actions/shared";
 
 export default function questions(state = {}, action) {
   switch (action.type) {
@@ -12,8 +9,11 @@ export default function questions(state = {}, action) {
         ...action.questions,
       };
     case NEW_QUESTION:
-      // TODO
-      return state;
+      const { question } = action;
+      return {
+        ...state,
+        [question.id]: question,
+      };
     case ANSWER_QUESTION:
       // TODO
       return state;

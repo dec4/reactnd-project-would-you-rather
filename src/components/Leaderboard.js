@@ -1,12 +1,12 @@
 import { Component } from "react";
 import { connect } from "react-redux";
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
 
 class Leaderboard extends Component {
   render() {
@@ -35,7 +35,7 @@ class Leaderboard extends Component {
                 return (
                   <TableRow
                     key={user.id}
-                    sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                   >
                     <TableCell component="th" scope="row">
                       {user.name}
@@ -45,7 +45,7 @@ class Leaderboard extends Component {
                     <TableCell align="center">{nAnswered}</TableCell>
                     <TableCell align="center">{nAsked + nAnswered}</TableCell>
                   </TableRow>
-                )
+                );
               })}
             </TableBody>
           </Table>
@@ -60,7 +60,9 @@ function mapStateToProps({ users }) {
     Object.keys(users[id].answers).length + users[id].questions.length;
 
   return {
-    sortedUserIds: Object.keys(users).sort((a, b) => userScore(b) - userScore(a)),
+    sortedUserIds: Object.keys(users).sort(
+      (a, b) => userScore(b) - userScore(a)
+    ),
     users,
   };
 }

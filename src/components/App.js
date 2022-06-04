@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <p>START</p>
-        {this.props.loading === true ? null : <Leaderboard />}
+        {this.props.loading === true ? null : <Dashboard />}
       </div>
     );
   }

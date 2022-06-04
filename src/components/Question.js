@@ -40,7 +40,7 @@ class Question extends Component {
               name="answer"
               value={question.optionOne.text}
             />
-            <label for={question.id + "-option1"}>
+            <label htmlFor={question.id + "-option1"}>
               {question.optionOne.text}
             </label>
             <span>&nbsp;OR&nbsp;</span>
@@ -50,7 +50,7 @@ class Question extends Component {
               name="answer"
               value={question.optionTwo.text}
             />
-            <label for={question.id + "-option2"}>
+            <label htmlFor={question.id + "-option2"}>
               {question.optionTwo.text}
             </label>
             <br></br>

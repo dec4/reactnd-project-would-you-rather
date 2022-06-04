@@ -9,7 +9,7 @@ class Dashboard extends Component {
       <div>
         <h3 className="Title">Would You Rather...</h3>
         {this.props.questionIds.map((qid) => (
-          <Question qid={qid} />
+          <Question qid={qid} key={qid} />
         ))}
       </div>
     );

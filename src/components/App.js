@@ -22,38 +22,30 @@ class App extends Component {
           <LoadingBar />
           <p>user: {this.props.authedUser}</p>
           <div className="container">
-            {this.props.loading === true 
-              ? null 
-              : this.props.authedUser === ""
-                ? (
-                  <div>
-                    <Route
-                      path="/login"
-                      render={(props) => <Login {...props} />}
-                    />
-                    <Redirect push to="/login" />
-                  </div>
-                )
-                : (
-                  <div>
-                    <Nav />
-                    <Route
-                      path="/"
-                      exact
-                      render={(props) => <Dashboard {...props} />}
-                    />
-                    <Route
-                      path="/leaderboard"
-                      render={(props) => <Leaderboard {...props} />}
-                    />
-                    <Route
-                      path="/new"
-                      render={(props) => <NewQuestion {...props} />}
-                    />
-                    
-                  </div>
-                )
-            }
+            {this.props.loading === true ? null : this.props.authedUser ===
+              "" ? (
+              <div>
+                <Route path="/login" render={(props) => <Login {...props} />} />
+                <Redirect push to="/login" />
+              </div>
+            ) : (
+              <div>
+                <Nav />
+                <Route
+                  path="/"
+                  exact
+                  render={(props) => <Dashboard {...props} />}
+                />
+                <Route
+                  path="/leaderboard"
+                  render={(props) => <Leaderboard {...props} />}
+                />
+                <Route
+                  path="/new"
+                  render={(props) => <NewQuestion {...props} />}
+                />
+              </div>
+            )}
           </div>
         </Fragment>
       </Router>

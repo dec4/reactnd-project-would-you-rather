@@ -1,14 +1,14 @@
 import { Component } from "react";
 import { connect } from "react-redux";
-import { withRouter } from 'react-router-dom'
+import { withRouter } from "react-router-dom";
 import { setAuthedUser } from "../actions/authedUser";
 
 class Login extends Component {
   handleClick = (id) => {
-    console.error('chose', id)
-    this.props.dispatch(setAuthedUser(id))
-    this.props.history.push('/');
-  }
+    console.error("chose", id);
+    this.props.dispatch(setAuthedUser(id));
+    this.props.history.push("/");
+  };
 
   render() {
     return (
@@ -22,16 +22,15 @@ class Login extends Component {
             onClick={() => this.handleClick(uid)}
           >
             {uid}
-        </button>
+          </button>
         ))}
-
       </div>
-    )
+    );
   }
 }
 
 function mapStateToProps({ users }) {
-  return { userIds: Object.keys(users) }
+  return { userIds: Object.keys(users) };
 }
 
-export default withRouter(connect(mapStateToProps)(Login))
+export default withRouter(connect(mapStateToProps)(Login));

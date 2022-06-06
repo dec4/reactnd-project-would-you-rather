@@ -15,10 +15,10 @@ class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData());
   }
-  
+
   logoutClick = () => {
     this.props.dispatch(setAuthedUser(""));
-  }
+  };
 
   render() {
     return (

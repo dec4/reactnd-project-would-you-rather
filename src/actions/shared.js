@@ -12,7 +12,7 @@ import { receiveUsers } from "./users";
 export const NEW_QUESTION = "NEW_QUESTION";
 export const ANSWER_QUESTION = "ANSWER_QUESTION";
 
-const AUTHED_ID = "tylermcginnis"; // temp
+const AUTHED_ID = ""; // temp: sarahedo
 
 export function handleInitialData() {
   return (dispatch) => {

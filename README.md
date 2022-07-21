@@ -6,6 +6,19 @@ The `_DATA.js` file represents a fake database and methods that let you access t
 
 Using the provided starter code, you'll build a React/Redux front end for the application. We recommend using the [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project.
 
+### Using my backend client: (TODO: LINK)
+
+> **_In Progress:_** Instead of using the provided fake database api, I am working on my own backend database manager. This was created using FastAPI, therefore we can use [openapi-generator](https://openapi-generator.tech/docs/installation) to create the frontend client.
+
+Prerequisites:
+
+* Install [openapi-generator](https://openapi-generator.tech/docs/installation)
+* **Important**: Run the backend service locally following the readme instructions. When the main service is running, the openapi specifications should be hosted on http://localhost:8008/openapi.json.
+
+To regenerate the client, run `npm run generate-be-client`
+
+# Original Notes / Instructions:
+
 ## Data
 
 There are two types of objects stored in our database:
@@ -55,17 +68,17 @@ Your code will talk to the database via 4 methods:
 
 1. `_getUsers()` Method
 
-_Description_: Get all of the existing users from the database.  
+_Description_: Get all of the existing users from the database.
 _Return Value_: Object where the key is the user’s id and the value is the user object.
 
 2. `_getQuestions()` Method
 
-_Description_: Get all of the existing questions from the database.  
+_Description_: Get all of the existing questions from the database.
 _Return Value_: Object where the key is the question’s id and the value is the question object.
 
 3. `_saveQuestion(question)` Method
 
-_Description_: Save the polling question in the database.  
+_Description_: Save the polling question in the database.
 _Parameters_: Object that includes the following properties: `author`, `optionOneText`, and `optionTwoText`. More details about these properties:
 
 | Attribute     | Type   | Description                                |

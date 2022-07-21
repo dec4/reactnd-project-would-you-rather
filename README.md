@@ -6,14 +6,21 @@ The `_DATA.js` file represents a fake database and methods that let you access t
 
 Using the provided starter code, you'll build a React/Redux front end for the application. We recommend using the [Create React App](https://github.com/facebook/create-react-app) to bootstrap the project.
 
+## Getting Started
+Note that this app was tested with node v14.19.3 (npm v6.14.17)
+
+1. (optional) install and use nvm to set your node version: `nvm install && nvm use`
+1. install all project dependencies: `npm install`
+1. start the development server: `npm start`
+
 ### Using my backend client: (TODO: LINK)
 
 > **_In Progress:_** Instead of using the provided fake database api, I am working on my own backend database manager. This was created using FastAPI, therefore we can use [openapi-generator](https://openapi-generator.tech/docs/installation) to create the frontend client.
 
 Prerequisites:
 
-* Install [openapi-generator](https://openapi-generator.tech/docs/installation)
-* **Important**: Run the backend service locally following the readme instructions. When the main service is running, the openapi specifications should be hosted on http://localhost:8008/openapi.json.
+1. install [openapi-generator](https://openapi-generator.tech/docs/installation) (I used `brew install openapi-generator`)
+1. **(important)** run the backend service locally following the README instructions. When the main service is running, the openapi specifications should be hosted on http://localhost:8008/openapi.json.
 
 To regenerate the client, run `npm run generate-be-client`
 

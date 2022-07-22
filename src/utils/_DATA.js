@@ -2,7 +2,7 @@ let users = {
   sarahedo: {
     id: "sarahedo",
     name: "Sarah Edo",
-    avatarURL: "public/logo192.png",
+    avatarURL: "https://i.picsum.photos/id/768/200/200.jpg?hmac=CZCVsqJECKhkvl5gzeCA0O5iSMmRn_RVFzVrREOE7ws",
     answers: {
       "8xf0y6ziyjabvozdd253nd": "optionOne",
       "6ni6ok3ym7mf1p33lnez": "optionTwo",
@@ -14,7 +14,7 @@ let users = {
   tylermcginnis: {
     id: "tylermcginnis",
     name: "Tyler McGinnis",
-    avatarURL: "public/logo192.png",
+    avatarURL: "https://i.picsum.photos/id/623/200/200.jpg?hmac=xquTjHIYmAPV3XEGlIUaV_KWyEofkbortxrK79jJhWA",
     answers: {
       vthrdm985a262al8qx3do: "optionOne",
       xj352vofupe1dqz9emx13r: "optionTwo",
@@ -24,7 +24,7 @@ let users = {
   johndoe: {
     id: "johndoe",
     name: "John Doe",
-    avatarURL: "public/logo192.png",
+    avatarURL: "https://i.picsum.photos/id/678/200/200.jpg?hmac=_vsd4KulLF2Ykh1bkjYgpfkfWJoqhDPrzIbvw_pHhsQ",
     answers: {
       xj352vofupe1dqz9emx13r: "optionOne",
       vthrdm985a262al8qx3do: "optionTwo",

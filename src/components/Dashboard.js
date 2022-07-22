@@ -20,7 +20,7 @@ class Dashboard extends Component {
     return (
       <div>
         <h3 className="Title">Would You Rather...</h3>
-        <button onClick={this.handleToggle}>
+        <button className="center dashboard-toggle" onClick={this.handleToggle}>
           {showAnswered ? "Show Unanswered" : "Show Answered"}
         </button>
         {questionIds.map((qid) => (

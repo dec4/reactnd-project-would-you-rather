@@ -25,10 +25,6 @@ code {
   padding: 10px;
 }
 
-.question-card {
-  padding: 10px;
-}
-
 .nav {
   padding-bottom: 50px;
   background-color: royalblue;
@@ -52,7 +48,7 @@ code {
 }
 
 .logout-button {
-  float:right;
+  float: right;
   padding: 5px;
   margin: 10px;
 }
@@ -65,4 +61,41 @@ li {
   list-style-type: none;
   padding: 10px;
   text-decoration: none;
+}
+
+.dashboard-toggle {
+  width: 200px;
+  margin-bottom: 40px;
+}
+
+.question-card {
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.question-card .options {
+  padding-bottom: 15px;
+}
+
+.question-card .option-one {
+  display: inline;
+  position: absolute;
+  right: 54%;
+}
+
+.question-card .or {
+  display: inline;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.question-card .option-two {
+  display: inline;
+  position: absolute;
+  left: 53%;
+}
+
+.question-card .btn {
+  padding: 5px 0px;
 }

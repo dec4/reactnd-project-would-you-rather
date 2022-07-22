@@ -36,52 +36,64 @@ class QuestionListItem extends Component {
       <div className="question-card">
         {Boolean(answeredByUser) && (
           <div>
-            <span
+            <div
+              className="option-one"
               style={{
                 textDecoration:
                   userAnswer === "optionOne" ? "none" : "line-through",
               }}
             >
               {question.optionOne.text}
-            </span>
-            <span>&nbsp;OR&nbsp;</span>
-            <span
+            </div>
+            <div className="or">&nbsp;OR&nbsp;</div>
+            <div
+              className="option-two"
               style={{
                 textDecoration:
                   userAnswer === "optionTwo" ? "none" : "line-through",
               }}
             >
               {question.optionTwo.text}
-            </span>
+            </div>
+            <br></br>
+            <button
+              className="btn center"
+            >
+              See Details
+            </button>
           </div>
         )}
 
         {!Boolean(answeredByUser) && (
           <form onSubmit={this.handleSubmit}>
-            <input
-              type="radio"
-              id={question.id + "-option1"}
-              name="answer"
-              value={question.optionOne.text}
-              onChange={this.handleChange}
-            />
-            <label htmlFor={question.id + "-option1"}>
-              {question.optionOne.text}
-            </label>
-            <span>&nbsp;OR&nbsp;</span>
-            <input
-              type="radio"
-              id={question.id + "-option2"}
-              name="answer"
-              value={question.optionTwo.text}
-              onChange={this.handleChange}
-            />
-            <label htmlFor={question.id + "-option2"}>
-              {question.optionTwo.text}
-            </label>
+            <div className="option-one">
+              <input
+                type="radio"
+                id={question.id + "-option1"}
+                name="answer"
+                value={question.optionOne.text}
+                onChange={this.handleChange}
+              />
+              <label htmlFor={question.id + "-option1"}>
+                {question.optionOne.text}
+              </label>
+            </div>
+            <span className="or">&nbsp;OR&nbsp;</span>
+            <div className="option-two">
+              <input
+                type="radio"
+                id={question.id + "-option2"}
+                name="answer"
+                value={question.optionTwo.text}
+                onChange={this.handleChange}
+              />
+              <label htmlFor={question.id + "-option2"}>
+                {question.optionTwo.text}
+              </label>
+            </div>
             <br></br>
             <button
-              className="btn"
+              className="btn center"
               type="submit"
               disabled={this.state.selectedAnswer === ""}
             >

@@ -1,8 +1,11 @@
 import { Component } from "react";
 import { connect } from "react-redux";
+import { NavLink } from 'react-router-dom'
 import { handleAnswerQuestion } from "../actions/shared";
+import VotingDetails from "./VotingDetails";
 
-class QuestionListItem extends Component {
+
+class Question extends Component {
   state = {
     selectedAnswer: "",
   };
@@ -31,7 +34,8 @@ class QuestionListItem extends Component {
   };
 
   render() {
-    const { question, answeredByUser, userAnswer } = this.props;
+    const { question, answeredByUser, userAnswer, showDetails } = this.props;
+
     return (
       <div className="question-card">
         {Boolean(answeredByUser) && (
@@ -56,11 +60,18 @@ class QuestionListItem extends Component {
               {question.optionTwo.text}
             </div>
             <br></br>
-            <button
-              className="btn center"
-            >
-              See Details
-            </button>
+            {showDetails ?
+              (
+                <VotingDetails question={question} />
+              ) : (
+                <NavLink
+                  className="btn center"
+                  to={`/questions/${question.id}`}
+                >
+                  See Details
+                </NavLink>
+              )
+            }
           </div>
         )}
 
@@ -106,7 +117,7 @@ class QuestionListItem extends Component {
   }
 }
 
-function mapStateToProps({ questions, users, authedUser }, { qid }) {
+function mapStateToProps({ questions, users, authedUser }, { qid, showDetails }) {
   const question = questions[qid];
   const user = users[authedUser];
   const answeredByUser = question.id in user.answers;
@@ -114,7 +125,8 @@ function mapStateToProps({ questions, users, authedUser }, { qid }) {
     question,
     answeredByUser,
     userAnswer: answeredByUser ? user.answers[question.id] : "",
+    showDetails
   };
 }
 
-export default connect(mapStateToProps)(QuestionListItem);
+export default connect(mapStateToProps)(Question);

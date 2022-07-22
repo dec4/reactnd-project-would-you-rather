@@ -9,6 +9,7 @@ import Leaderboard from "./Leaderboard";
 import Login from "./Login";
 import NewQuestion from "./NewQuestion";
 import Nav from "./Nav";
+import QuestionPage from "./QuestionPage";
 
 class App extends Component {
   componentDidMount() {
@@ -42,6 +43,10 @@ class App extends Component {
                 <Route
                   path="/new"
                   render={(props) => <NewQuestion {...props} />}
+                />
+                <Route
+                  path="/questions/:qid"
+                  component={QuestionPage}
                 />
               </div>
             )}

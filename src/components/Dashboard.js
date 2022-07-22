@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import Question from "./Question";
+import QuestionListItem from "./QuestionListItem";
 
 class Dashboard extends Component {
   state = {
-    showAnswered: true,
+    showAnswered: false,
   };
 
   handleToggle = () => {
@@ -24,7 +24,7 @@ class Dashboard extends Component {
           {showAnswered ? "Show Unanswered" : "Show Answered"}
         </button>
         {questionIds.map((qid) => (
-          <Question qid={qid} key={qid} />
+          <QuestionListItem qid={qid} key={qid} />
         ))}
       </div>
     );

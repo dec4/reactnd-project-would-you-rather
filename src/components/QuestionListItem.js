@@ -2,7 +2,7 @@ import { Component } from "react";
 import { connect } from "react-redux";
 import { handleAnswerQuestion } from "../actions/shared";
 
-class Question extends Component {
+class QuestionListItem extends Component {
   state = {
     selectedAnswer: "",
   };
@@ -105,4 +105,4 @@ function mapStateToProps({ questions, users, authedUser }, { qid }) {
   };
 }
 
-export default connect(mapStateToProps)(Question);
+export default connect(mapStateToProps)(QuestionListItem);

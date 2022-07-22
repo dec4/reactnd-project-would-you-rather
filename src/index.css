@@ -29,19 +29,32 @@ code {
   padding: 10px;
 }
 
-.active {
-  font-weight: bold;
+.nav {
+  padding-bottom: 50px;
+  background-color: royalblue;
 }
 
 .nav ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
+  padding: 0;
+  list-style: none;
   text-decoration: none;
 }
 
-.nav li:first-child {
-  padding-left: 0;
+.nav ul li {
+  display: inline;
+  margin: 10px 0px;
+  padding: 5px 0.5em;
+  float:left;
+}
+
+.nav ul li a:hover {
+  font-weight: bold;
+}
+
+.logout-button {
+  float:right;
+  padding: 5px;
+  margin: 10px;
 }
 
 ul {

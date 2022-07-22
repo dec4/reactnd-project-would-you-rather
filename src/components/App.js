@@ -4,7 +4,6 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import LoadingBar from "react-redux-loading";
 import "./App.css";
 import { handleInitialData } from "../actions/shared";
-import { setAuthedUser } from "../actions/authedUser";
 import Dashboard from "./Dashboard";
 import Leaderboard from "./Leaderboard";
 import Login from "./Login";
@@ -15,10 +14,6 @@ class App extends Component {
   componentDidMount() {
     this.props.dispatch(handleInitialData());
   }
-
-  logoutClick = () => {
-    this.props.dispatch(setAuthedUser(""));
-  };
 
   render() {
     return (
@@ -35,9 +30,6 @@ class App extends Component {
             ) : (
               <div>
                 <Nav />
-                <button onClick={this.logoutClick}>
-                  Logout User {this.props.authedUser}
-                </button>
                 <Route
                   path="/"
                   exact

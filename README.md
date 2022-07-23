@@ -24,6 +24,18 @@ Prerequisites:
 
 To regenerate the client, run `npm run generate-be-client`
 
+### Todos (note to self)
+
+* adhere to rubric (review specifications)
+* handle failed api updates
+    * new question: store form and alert if failed
+* redirect to appropriate places
+    * on new question submit --> open questions/:qid ?
+    * on answer submit --> open questions/:qid ?
+    * store `showAnswered` for returning back to dashboard page
+    * fix double login load (shows error)
+* general style
+
 # Original Notes / Instructions:
 
 ## Data

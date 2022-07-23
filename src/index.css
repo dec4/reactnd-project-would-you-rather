@@ -107,3 +107,13 @@ li {
   width: auto;
   padding-top: 0;
 }
+
+.new-question {
+  display: inline-block;
+  text-align: center;
+  width: 95%;
+}
+
+.new-question > * {
+  margin-bottom: 10px;
+}

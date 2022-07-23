@@ -35,8 +35,8 @@ class NewQuestion extends Component {
 
     return (
       <div>
-        <h3 className="Title">New: Would You Rather...</h3>
-        <form className="new-question" onSubmit={this.handleSubmit}>
+        <h3 className="Title">Create a New "Would You Rather..."</h3>
+        <form className="center new-question" onSubmit={this.handleSubmit}>
           <input
             name="option1"
             type="text"
@@ -44,7 +44,7 @@ class NewQuestion extends Component {
             onChange={this.handleChange}
             placeholder="Option 1"
           />
-          <br />
+          <div className="or">&nbsp;OR&nbsp;</div>
           <input
             name="option2"
             type="text"

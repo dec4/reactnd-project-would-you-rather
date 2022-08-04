@@ -34,7 +34,11 @@ class App extends Component {
                 <Route
                   path="/"
                   exact
-                  render={(props) => <Dashboard {...props} />}
+                  render={(props) => <Dashboard showAnswered={false} {...props} />}
+                />
+                <Route
+                  path="/answered"
+                  render={(props) => <Dashboard showAnswered={true} {...props} />}
                 />
                 <Route
                   path="/leaderboard"

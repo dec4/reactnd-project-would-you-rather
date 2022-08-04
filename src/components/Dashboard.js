@@ -4,10 +4,16 @@ import Question from "./Question";
 
 class Dashboard extends Component {
   state = {
-    showAnswered: false,
+    showAnswered: this.props.showAnswered,
   };
 
-  handleToggle = () => {
+  handleToggle = (e) => {
+    e.preventDefault();
+    if (this.state.showAnswered) {
+      this.props.history.push('/')
+    } else {
+      this.props.history.push('/answered');
+    }
     this.setState((prevState) => ({
       showAnswered: !prevState.showAnswered,
     }));
@@ -31,7 +37,7 @@ class Dashboard extends Component {
   }
 }
 
-function mapStateToProps({ authedUser, questions, users }) {
+function mapStateToProps({ authedUser, questions, users }, { showAnswered }) {
   const authedUserObj = users[authedUser];
   var answered = [];
   var unanswered = [];
@@ -45,6 +51,7 @@ function mapStateToProps({ authedUser, questions, users }) {
   return {
     answered,
     unanswered,
+    showAnswered
   };
 }
 
